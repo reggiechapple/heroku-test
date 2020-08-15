@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath heroku_test heroku_test.wgsi --log-file -
+web: gunicorn --pythonpath heroku_test heroku_test.wsgi --log-file -
