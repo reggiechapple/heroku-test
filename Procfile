@@ -1,1 +1,1 @@
-web: gunicorn heroku_test.wgsi:application --log-file -
+web: gunicorn heroku_test.wgsi --log-file -
