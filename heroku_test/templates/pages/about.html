@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+      <div class="row">
+        <div class="col">
+            <h2 class="bp-text my-3">About Me</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="card rounded-0">
+            <img class="card-img-top" src="{% static 'images/self.jpg' %}" alt="">
+            <div class="card-body dc-border-left dc-border-right dc-border-bottom">
+              <p class="card-text">Reginald Chapple</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="card rounded-0 dc-border-left">
+            <div class="card-body">
+              <p class="card-text">
+                Hello World, I’ am Reginald Chapple, a California native and travel enthusiast. I have been working in the hospitality industry for 12 years. Within those 12 years I have worked various seasonal job in some of the amazing places this country has offer. 
+              </p>
+              <p class="card-text">
+                I’m now looking to open a new chapter in my career, I’m seeking to forge a new path as a bartender. I’ am recent graduate of the ABC Bartending School in Las Vegas, NV. I want to start my career in Las Vegas because I figure where better to earn my spurs as a bartender. I’ am now currently looking for opportunities to earn and grow in this profession.
+              </p>
+              <p class="card-text">
+                I put together a search engine of drinks I can make and have committed to memory. I intend to expand upon it as my knowledge and experience increases. Check out the <a class="" href="{% url 'drinks:all_drinks' %}">drinks I know.</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="card my-3 rounded-0">
+            <div class="card-header">
+              Skills
+            </div>
+            <ul class="list-group list-group-flush dc-border-bottom">
+              <li class="list-group-item">Cooking</li>
+              <li class="list-group-item">Cleaning</li>
+              <li class="list-group-item">Guest Service and Hospitality</li>
+              <li class="list-group-item">Microsoft Office</li>
+              <li class="list-group-item">Trained Bartending</li>
+              <li class="list-group-item">Web Development (I built this site from code)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+body {
+  padding-top: 4.5rem;
+}
+
+.footer {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  bottom: 0;
+}
+
+.card-img-top {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card-header {
+  background-color: #164D81;
+  color: #ffffff;
+}
+
+.card-header:first-child {
+  border-radius: 0;
+}
+
+.di-list-item.list-inline-item {
+  font-size: 0.75rem;
+}

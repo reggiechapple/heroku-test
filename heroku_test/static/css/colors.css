@@ -1,0 +1,35 @@
+.dark-cerulean {
+  background-color: #164D81;
+}
+
+.black-pearl {
+  background-color: #030B12;
+}
+
+.bp-text {
+  color: #030B12 !important;
+}
+
+.dc-border {
+  border: 2px solid #164D81;
+}
+
+.dc-border-left {
+  border-left: 2px solid #164D81;
+}
+
+.dc-border-left-wide {
+  border-left: 4px solid #164D81;
+}
+
+.dc-border-right {
+  border-right: 2px solid #164D81;
+}
+
+.dc-border-top {
+  border-top: 2px solid #164D81;
+}
+
+.dc-border-bottom {
+  border-bottom: 2px solid #164D81;
+}

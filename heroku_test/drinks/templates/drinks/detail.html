@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-3">
+        <div class="col">
+            <h2 class="">{{ drink.name }}</h2>
+
+            <div class="mb-1 text-muted">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        Category: {{ drink.category.name }}
+                    </li>
+                    <li class="list-inline-item">
+                        Base: {% for alc in drink.alcohols.all %}{{ alc.name }}&nbsp;{% endfor %}
+                    </li>
+                    <li class="list-inline-item">
+                        Technique: {{ drink.technique.name }}
+                    </li>
+                    <li class="list-inline-item">
+                        Glassware: {% for glass in drink.glassware.all %}{{ glass.name }}&nbsp;{% endfor %}
+                    </li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <h2>Ingredients</h2>
+            <ul>
+                {% for di in drink.ingredients.all %}
+                    <li>{{ di.ingredient.name }}</li>
+                {% endfor %}
+            </ul>
+            
+            <h2>Instructions</h2>
+            <ol>
+                {% for inst in drink.instructions.all %}
+                    <li>{{ inst.step }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock content %}

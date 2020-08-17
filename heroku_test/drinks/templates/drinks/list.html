@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col py-3">
+            <h2 class="bp-text my-3">Drinks I Can Make</h2>
+            <form method="GET">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="q" placeholder="Search drinks" aria-label="Search drinks" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        {% for drink in drinks %}
+            <div class="col-md-6">
+                {% include 'drinks/_drink-card.html' %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

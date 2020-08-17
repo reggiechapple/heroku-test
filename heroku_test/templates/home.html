@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'deps/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'deps/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    {% block headextras %}{% endblock headextras %}
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+    <script src="{% static 'deps/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'deps/popper/popper.min.js' %}"></script>
+    <script src="{% static 'deps/bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block javascript %}{% endblock javascript %}
+</body>
+</html>
