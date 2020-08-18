@@ -13,13 +13,13 @@
                         Category: {{ drink.category.name }}
                     </li>
                     <li class="list-inline-item">
-                        Base: {% for alc in drink.alcohols.all %}{{ alc.name }}&nbsp;{% endfor %}
+                        Base: {% for alc in drink.alcohols.all %}{% if forloop.last %} {{ alc.name }} {% else %} {{ alc.name }}, {% endif %}{% endfor %}
                     </li>
                     <li class="list-inline-item">
                         Technique: {{ drink.technique.name }}
                     </li>
                     <li class="list-inline-item">
-                        Glassware: {% for glass in drink.glassware.all %}{{ glass.name }}&nbsp;{% endfor %}
+                        Glassware: {% for glass in drink.glassware.all %}{% if forloop.last %} {{ glass.name }} {% else %} {{ glass.name }} or {% endif %}{% endfor %}
                     </li>
                 </ul>
             </div>
@@ -29,7 +29,7 @@
             <h2>Ingredients</h2>
             <ul>
                 {% for di in drink.ingredients.all %}
-                    <li>{{ di.ingredient.name }}</li>
+                    <li>{{ di.name }}</li>
                 {% endfor %}
             </ul>
             

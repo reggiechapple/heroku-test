@@ -11,13 +11,45 @@ class DrinkIngredientInline(admin.TabularInline):
     extra = 1
 
 class DrinkAdmin(admin.ModelAdmin):
-    inlines = [InstructionInline, DrinkIngredientInline]
+    inlines = [DrinkIngredientInline, InstructionInline]
+    ordering = ['name',]
+
     class Meta:
         model = Drink
 
+class AlcoholAdmin(admin.ModelAdmin):
+    ordering = ['name',]
+    
+    class Meta:
+        model = Alcohol
+
+class CategoryAdmin(admin.ModelAdmin):
+    ordering = ['name',]
+    
+    class Meta:
+        model = Category
+
+class IngredientAdmin(admin.ModelAdmin):
+    ordering = ['name',]
+    
+    class Meta:
+        model = Ingredient
+
+class GlasswareAdmin(admin.ModelAdmin):
+    ordering = ['name',]
+    
+    class Meta:
+        model = Glassware
+
+class TechniqueAdmin(admin.ModelAdmin):
+    ordering = ['name',]
+    
+    class Meta:
+        model = Technique
+
 admin.site.register(Drink, DrinkAdmin)
-admin.site.register(Alcohol)
-admin.site.register(Category)
-admin.site.register(Ingredient)
-admin.site.register(Glassware)
-admin.site.register(Technique)
+admin.site.register(Alcohol, AlcoholAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Ingredient, IngredientAdmin)
+admin.site.register(Glassware, GlasswareAdmin)
+admin.site.register(Technique, TechniqueAdmin)

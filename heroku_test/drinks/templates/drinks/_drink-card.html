@@ -10,7 +10,7 @@
         <div class="mb-1 text-muted">
             <ul class="list-inline mb-0">
                 {% for di in drink.ingredients.all %}
-                <li class="di-list-item list-inline-item">{{ di.ingredient.name }}</li>
+                <li class="di-list-item list-inline-item">{{ di.name }}</li>
                 {% endfor %}
             </ul>
         </div>

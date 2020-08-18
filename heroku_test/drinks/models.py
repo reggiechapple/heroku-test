@@ -99,6 +99,15 @@ class Ingredient(models.Model):
         self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+class DrinkIngredient(models.Model):
+
+    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, blank=True)
+    drink = models.ForeignKey("Drink", on_delete=models.CASCADE, blank=True)
+
+    class Meta:
+        verbose_name = "drink ingredient"
+        verbose_name_plural = "drink ingredients"
+
 class Drink(models.Model):
 
     slug = models.SlugField(max_length=128, unique=True, blank=True)
@@ -108,6 +117,7 @@ class Drink(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, related_name='drinks', null=True, blank=True)
     alcohols = models.ManyToManyField(Alcohol, related_name='drinks', blank=True)
     glassware = models.ManyToManyField(Glassware, related_name='drinks', blank=True)
+    ingredients = models.ManyToManyField(Ingredient, through=DrinkIngredient, blank=True)
 
     class Meta:
         verbose_name = "drink"
@@ -142,13 +152,3 @@ class Instruction(models.Model):
 
     def __str__(self):
         return self.step
-
-class DrinkIngredient(models.Model):
-
-    amount = models.CharField(max_length=50, blank=True, null=True)
-    ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE, related_name='drinks', blank=True)
-    drink = models.ForeignKey(Drink, on_delete=models.CASCADE, related_name='ingredients', blank=True)
-
-    class Meta:
-        verbose_name = "drink ingredient"
-        verbose_name_plural = "drink ingredients"
